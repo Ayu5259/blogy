@@ -1,0 +1,2 @@
+# blogy
+main skeleton

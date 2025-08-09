@@ -1,9 +1,6 @@
-<!-- /*
-* Template Name: Blogy
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+<?php
+require_once "config/loader.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,6 +30,7 @@
 
 	<link rel="stylesheet" href="css/flatpickr.min.css">
 
+	<?php require_once "config/styleloade.php" ?>
 
 	<title>Blogy &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
 </head>
@@ -88,7 +86,14 @@
 								<li><a href="category.html">Culture</a></li>
 								<li><a href="category.html">Business</a></li>
 								<li><a href="category.html">Politics</a></li>
-								<li><a href="login.php">Login</a></li>
+								<li>
+									<?php
+									if (isset($_SESSION['login'])) { ?>
+										<a href="action/logout.php">Login</a>
+									<?php } else { ?>
+										<a href="login.php">Logout</a>
+									<?php }; ?>
+								</li>
 
 							</ul>
 						</div>
@@ -714,6 +719,7 @@
 	<script src="js/counter.js"></script>
 	<script src="js/custom.js"></script>
 
+	<?php require_once("config/errorloader.php") ?>
 
 </body>
 
